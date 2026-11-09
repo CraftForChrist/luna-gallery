@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Luna Gallery | Local Art and Handmade Gifts in Downtown Ypsilanti</title>
+<meta name="description" content="Luna Gallery is a downtown Ypsilanti shop for art by local artists: sea glass earrings, prints, paintings and handmade gifts.">
+<meta name="color-scheme" content="dark">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,600;1,9..144,400&family=DM+Sans:wght@400;500;700&display=swap">
+<style>
+:root{--bg:#000;--surf:#0f0d12;--line:#25222b;--tx:#f6f2fa;--mut:#a9a3b3;
+--lil:#cdb8ff;--pink:#ffc2dc;--mint:#b6f2df;--peach:#ffd7b0;--sky:#b9defc;--but:#f6f7b4;
+--disp:Fraunces,Georgia,"Times New Roman",serif;--body:"DM Sans",system-ui,-apple-system,"Segoe UI",sans-serif;
+box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+*,*::before,*::after{box-sizing:inherit}
+html{scroll-behavior:smooth;scroll-padding-top:calc(76px + env(safe-area-inset-top,0px));color-scheme:dark}
+body{margin:0;background:var(--bg);color:var(--tx);font:400 17px/1.7 var(--body);-webkit-font-smoothing:antialiased}
+body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset-top,0px);background:var(--bg);z-index:60}
+a{color:inherit}
+h1,h2,h3{font-family:var(--disp);font-weight:400;line-height:1.05;margin:0}
+h1{font-size:clamp(2.9rem,7.2vw,5.8rem);letter-spacing:-.02em}
+h2{font-size:clamp(2.2rem,4.8vw,3.5rem);letter-spacing:-.015em}
+h3{font-size:1.55rem;font-weight:600}
+p{margin:0 0 1em}
+.wrap{max-width:1160px;margin:0 auto;padding:0 24px}
+section{padding:92px 0}
+:focus-visible{outline:3px solid var(--lil);outline-offset:3px;border-radius:6px}
+.btn{display:inline-flex;align-items:center;justify-content:center;min-height:50px;padding:0 28px;border-radius:999px;font:500 1rem var(--body);text-decoration:none;border:1.5px solid var(--lil);cursor:pointer;transition:transform .15s,background .15s,color .15s}
+.btn.pri{background:var(--lil);color:#12091f}
+.btn.pri:hover{background:var(--pink);border-color:var(--pink);transform:translateY(-2px)}
+.btn.sec{background:transparent;color:var(--lil)}
+.btn.sec:hover{background:var(--lil);color:#12091f}
+
+nav{position:sticky;top:env(safe-area-inset-top,0px);z-index:50;background:rgba(0,0,0,.86);backdrop-filter:blur(12px);border-bottom:1px solid var(--line)}
+nav .wrap{display:flex;align-items:center;justify-content:space-between;height:68px}
+.logo{font:600 1.5rem/1 var(--disp);text-decoration:none;display:flex;align-items:center;gap:10px}
+.logo i{width:20px;height:20px;border-radius:50%;background:var(--lil);position:relative;overflow:hidden;display:block}
+.logo i::after{content:"";position:absolute;width:20px;height:20px;border-radius:50%;background:#000;left:6px;top:-3px}
+.links{display:flex;gap:26px;align-items:center}
+.links a{text-decoration:none;color:var(--mut);font-size:.96rem}
+.links a:hover{color:var(--pink)}
+.links .btn{min-height:40px;padding:0 20px;color:#12091f}
+
+.hero{padding:60px 0 90px;overflow:hidden;background:radial-gradient(700px 420px at 80% 30%,rgba(205,184,255,.16),transparent 70%),radial-gradient(500px 300px at 10% 90%,rgba(255,194,220,.1),transparent 70%)}
+.hero .wrap{display:grid;grid-template-columns:1.1fr 1fr;gap:40px;align-items:center}
+.lead{font-size:1.2rem;color:var(--mut);max-width:32em;margin:22px 0 32px}
+.cta{display:flex;flex-wrap:wrap;gap:14px}
+.moonwrap{position:relative;aspect-ratio:1;max-width:480px;width:100%;margin-left:auto}
+.moon{position:absolute;inset:8%;border-radius:50%;background:conic-gradient(from 200deg,var(--lil),var(--pink),var(--peach),var(--mint),var(--sky),var(--lil));box-shadow:0 0 90px rgba(205,184,255,.35)}
+.moon::after{content:"";position:absolute;width:86%;height:86%;border-radius:50%;background:#000;right:-14%;top:-8%}
+.stars{position:absolute;inset:0;background:radial-gradient(2px 2px at 12% 20%,var(--but),transparent),radial-gradient(2px 2px at 80% 12%,var(--sky),transparent),radial-gradient(3px 3px at 92% 55%,var(--pink),transparent),radial-gradient(2px 2px at 20% 85%,var(--mint),transparent),radial-gradient(2px 2px at 60% 92%,var(--lil),transparent),radial-gradient(3px 3px at 6% 52%,var(--peach),transparent)}
+@media(prefers-reduced-motion:no-preference){.moon{animation:drift 9s ease-in-out infinite alternate}}
+@keyframes drift{from{transform:rotate(-8deg)}to{transform:rotate(6deg)}}
+
+.head{max-width:42rem;margin-bottom:44px}
+.head p{color:var(--mut);margin-top:14px;font-size:1.1rem}
+.grid{display:grid;grid-template-columns:repeat(4,1fr);gap:16px}
+.cat{border-radius:22px;padding:26px;color:#15101c;min-height:290px;display:flex;flex-direction:column;justify-content:flex-end;position:relative;overflow:hidden;transition:transform .2s}
+.cat:hover{transform:translateY(-5px)}
+.cat::before{content:"";position:absolute;width:150px;height:150px;border-radius:50%;right:-30px;top:-30px;background:rgba(255,255,255,.4)}
+.cat p{margin:8px 0 0;font-size:.98rem;color:#2c2236}
+.c1{background:var(--sky)}.c2{background:var(--pink)}.c3{background:var(--lil)}.c4{background:var(--peach)}
+
+.art{display:grid;grid-template-columns:repeat(6,1fr);grid-auto-rows:120px;gap:14px}
+.tile{border-radius:18px;position:relative;overflow:hidden}
+.tile span{position:absolute;left:14px;bottom:12px;font:500 .85rem var(--body);background:rgba(0,0,0,.72);color:var(--tx);padding:3px 12px;border-radius:999px}
+.t1{grid-column:span 2;grid-row:span 3;background:radial-gradient(circle at 30% 30%,var(--pink),transparent 55%),linear-gradient(160deg,var(--lil),var(--sky))}
+.t2{grid-column:span 2;grid-row:span 2;background:conic-gradient(from 90deg at 60% 60%,var(--mint),var(--sky),var(--lil),var(--mint))}
+.t3{grid-column:span 2;grid-row:span 3;background:radial-gradient(circle at 70% 25%,var(--but),transparent 50%),linear-gradient(200deg,var(--peach),var(--pink))}
+.t4{grid-column:span 2;grid-row:span 1;background:linear-gradient(90deg,var(--sky),var(--mint))}
+.t5{grid-column:span 2;grid-row:span 2;background:radial-gradient(circle at 20% 80%,var(--lil),transparent 55%),linear-gradient(120deg,var(--mint),var(--but))}
+.t6{grid-column:span 2;grid-row:span 1;background:linear-gradient(90deg,var(--pink),var(--peach))}
+.note{margin-top:18px;color:var(--mut);font-size:.9rem}
+
+.gift{background:var(--surf)}
+.gcards{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+.gc{border:1px solid var(--line);border-radius:22px;padding:30px;background:#000}
+.gc p{color:var(--mut);margin:12px 0 0}
+.gc i{display:block;width:44px;height:44px;border-radius:50%;margin-bottom:18px}
+
+.about{display:grid;grid-template-columns:1fr 1fr;gap:56px;align-items:center}
+.about p{color:var(--mut);font-size:1.1rem}
+.about .big{font:italic 400 clamp(1.8rem,3.4vw,2.6rem)/1.2 var(--disp);color:var(--tx);margin-bottom:.6em}
+.artist{border:1.5px solid var(--pink);border-radius:26px;padding:34px;background:linear-gradient(160deg,rgba(255,194,220,.1),transparent)}
+.artist p{color:var(--mut);margin:12px 0 22px}
+
+.visit{background:var(--surf)}
+.vgrid{display:grid;grid-template-columns:1fr 1.1fr;gap:54px}
+.info{margin-top:28px;display:grid;gap:20px}
+.info b{display:block;color:var(--mint);font-weight:500}
+.info a{text-decoration:none}
+.info .tbd{color:var(--mut);font-style:italic}
+form{background:#000;border:1px solid var(--line);border-radius:26px;padding:32px;display:grid;gap:16px}
+label{display:grid;gap:6px;font-weight:500;font-size:.93rem}
+input,select,textarea{font:inherit;color:var(--tx);background:var(--surf);border:1px solid #38343f;border-radius:14px;padding:13px 16px;width:100%}
+input:focus,select:focus,textarea:focus{border-color:var(--lil);outline:none;box-shadow:0 0 0 3px rgba(205,184,255,.28)}
+textarea{min-height:110px;resize:vertical}
+.two{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+.fine{font-size:.85rem;color:var(--mut);margin:0;text-align:center}
+.done{display:none;color:var(--mint);font-weight:500;text-align:center;margin:0}
+
+.ig{text-align:center}
+.ig h2{max-width:20ch;margin:0 auto 22px}
+.ig p{color:var(--mut);max-width:34em;margin:0 auto 28px}
+
+footer{border-top:1px solid var(--line);padding:34px 0 110px;color:var(--mut);font-size:.92rem}
+footer .wrap{display:flex;justify-content:space-between;flex-wrap:wrap;gap:12px}
+.mbar{display:none}
+
+@media(max-width:900px){
+section{padding:66px 0}
+.hero .wrap,.vgrid,.about{grid-template-columns:1fr;gap:38px}
+.moonwrap{max-width:340px;margin:0 auto}
+.grid{grid-template-columns:1fr 1fr}
+.gcards{grid-template-columns:1fr}
+.links a:not(.btn){display:none}
+}
+@media(max-width:600px){
+body{font-size:16px}
+.grid,.two{grid-template-columns:1fr}
+.cat{min-height:200px}
+.art{grid-template-columns:1fr 1fr;grid-auto-rows:110px}
+.tile{grid-column:span 1!important}
+.wrap{padding:0 20px}
+form{padding:22px}
+.mbar{display:grid;grid-template-columns:1fr 1fr;gap:10px;position:fixed;left:0;right:0;bottom:0;padding:12px 16px calc(12px + env(safe-area-inset-bottom,0px));background:rgba(0,0,0,.93);backdrop-filter:blur(10px);border-top:1px solid var(--line);z-index:55}
+.mbar .btn{min-height:46px}
+}
+@media(prefers-reduced-motion:reduce){*{transition:none!important;scroll-behavior:auto!important}}
+</style>
+</head>
+<body>
+
+<nav>
+<div class="wrap">
+<a class="logo" href="#top" aria-label="Luna Gallery home"><i></i>Luna Gallery</a>
+<div class="links">
+<a href="#shop">Shop</a><a href="#artists">Artists</a><a href="#gifts">Gifts</a><a href="#about">About</a>
+<a class="btn pri" href="#visit">Visit us</a>
+</div>
+</div>
+</nav>
+
+<header class="hero" id="top">
+<div class="wrap">
+<div>
+<h1>Art made by hand, by people who live nearby.</h1>
+<p class="lead">Luna Gallery is a small shop in downtown Ypsilanti filled with work from local artists: sea glass earrings, prints, paintings and handmade gifts.</p>
+<div class="cta">
+<a class="btn pri" href="#visit">Plan your visit</a>
+<a class="btn sec" href="#shop">Browse what we carry</a>
+</div>
+</div>
+<div class="moonwrap" aria-hidden="true"><div class="stars"></div><div class="moon"></div></div>
+</div>
+</header>
+
+<section id="shop">
+<div class="wrap">
+<div class="head"><h2>What you’ll find inside.</h2><p>Every piece is made by an artist from our area. Stop in and pick one up.</p></div>
+<div class="grid">
+<article class="cat c1"><h3>Sea glass jewelry</h3><p>Earrings and small pieces made from sea glass.</p></article>
+<article class="cat c2"><h3>Prints</h3><p>Art you can frame and hang the same day.</p></article>
+<article class="cat c3"><h3>Paintings</h3><p>Original work by local painters.</p></article>
+<article class="cat c4"><h3>Handmade gifts</h3><p>Small, special things for people you care about.</p></article>
+</div>
+</div>
+</section>
+
+<section id="artists" style="padding-top:0">
+<div class="wrap">
+<div class="head"><h2>A look around the gallery.</h2></div>
+<div class="art" role="img" aria-label="Pastel placeholder tiles for gallery photos">
+<div class="tile t1"><span>Paintings</span></div>
+<div class="tile t2"><span>Sea glass</span></div>
+<div class="tile t3"><span>Prints</span></div>
+<div class="tile t4"></div>
+<div class="tile t5"><span>Handmade gifts</span></div>
+<div class="tile t6"></div>
+</div>
+<p class="note">Photo placeholders. Swap in real photos of the shop and artwork.</p>
+</div>
+</section>
+
+<section id="gifts" class="gift">
+<div class="wrap">
+<div class="head"><h2>Finding the right gift.</h2><p>Not sure where to start? Here are three easy ways to shop.</p></div>
+<div class="gcards">
+<div class="gc"><i style="background:var(--pink)"></i><h3>For a friend</h3><p>A pair of sea glass earrings or a small print is a thoughtful, personal pick.</p></div>
+<div class="gc"><i style="background:var(--mint)"></i><h3>For the home</h3><p>Paintings and prints from local artists make a space feel like yours.</p></div>
+<div class="gc"><i style="background:var(--but)"></i><h3>For yourself</h3><p>Treat yourself to something one of a kind. You’ll know it when you see it.</p></div>
+</div>
+</div>
+</section>
+
+<section id="about">
+<div class="wrap about">
+<div>
+<p class="big">A magical place to find something made with care.</p>
+<p>Luna Gallery gives local artists a home on Ypsilanti’s main streets and gives visitors a better way to give gifts: ones with a story, and a maker you can name.</p>
+<p>Our shop is welcoming to everyone, and we’re proud to carry work from LGBTQ+ artists as well as artists from every part of the community.</p>
+</div>
+<div class="artist">
+<h3>Are you an artist?</h3>
+<p>We love finding new local makers. Tell us about your work and where we can see it, and we’ll get back to you.</p>
+<a class="btn sec" href="#visit">Get in touch</a>
+</div>
+</div>
+</section>
+
+<section id="visit" class="visit">
+<div class="wrap vgrid">
+<div>
+<h2>Come say hello.</h2>
+<p style="color:var(--mut);margin-top:14px;font-size:1.1rem">Find us in downtown Ypsilanti, Michigan. Send a note about a piece, a gift, or becoming one of our artists.</p>
+<div class="info">
+<div><b>Find us</b>Downtown Ypsilanti, Michigan <span class="tbd">(add street address)</span></div>
+<div><b>Hours</b><span class="tbd">Add your hours here</span></div>
+<div><b>Follow along</b><a href="https://www.instagram.com/lunagalleryypsi/" target="_blank" rel="noopener">@lunagalleryypsi on Instagram</a></div>
+</div>
+</div>
+<form id="cf">
+<div class="two">
+<label>Your name<input name="n" required autocomplete="name"></label>
+<label>Email<input name="e" type="email" required autocomplete="email"></label>
+</div>
+<label>I’m reaching out about
+<select name="t"><option>A piece or a gift</option><option>Selling my art here</option><option>Something else</option></select></label>
+<label>Message<textarea name="m" required placeholder="Tell us a little more"></textarea></label>
+<button class="btn pri" type="submit">Send message</button>
+<p class="done" id="ok" role="status">Opening your email app to send this.</p>
+<p class="fine">We’ll write back as soon as we can.</p>
+</form>
+</div>
+</section>
+
+<section class="ig">
+<div class="wrap">
+<h2>See what’s new on the shelves.</h2>
+<p>We share new arrivals and artists on Instagram. Follow along, then stop in to see everything in person.</p>
+<a class="btn pri" href="https://www.instagram.com/lunagalleryypsi/" target="_blank" rel="noopener">Follow @lunagalleryypsi</a>
+</div>
+</section>
+
+<footer>
+<div class="wrap"><div>© 2026 Luna Gallery</div><div>Downtown Ypsilanti, Michigan</div></div>
+</footer>
+
+<div class="mbar"><a class="btn sec" href="https://www.instagram.com/lunagalleryypsi/" target="_blank" rel="noopener">Instagram</a><a class="btn pri" href="#visit">Visit us</a></div>
+
+<script>
+document.getElementById('cf').addEventListener('submit',function(e){
+e.preventDefault();var d=new FormData(e.target);
+var b='From: '+d.get('n')+' ('+d.get('e')+')\n\n'+d.get('m');
+document.getElementById('ok').style.display='block';
+window.location.href='mailto:?subject='+encodeURIComponent('Luna Gallery: '+d.get('t'))+'&body='+encodeURIComponent(b);
+});
+</script>
+</body>
+</html>
